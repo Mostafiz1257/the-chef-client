@@ -1,20 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../components/Main/Main";
-import Header from "../components/Main/Header";
+
 import Footer from "../components/Main/Footer";
+import Navbar from "../components/Main/Navbar";
 
 const route = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>
+        path: '/',
+        element: <Main></Main>
     },
     {
-        path:'/header',
-        element:<Header></Header>
+        path: '/navbar',
+        element: <Navbar></Navbar>
     },
     {
-        path:'/footer',
-        element:<Footer></Footer>
+        path: '/footer',
+        element: <Footer></Footer>
     }
 ])
 

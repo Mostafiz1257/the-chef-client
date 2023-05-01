@@ -1,14 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
-import Header from './Header';
+import Navbar from './Navbar';
+import HeaderProfile from '../pages/HeaderProfile';
 
 const Main = () => {
     return (
-        <div>
-         <Header></Header>
-           <Outlet></Outlet>
-           <Footer></Footer>
+        <div className=''>
+            <Navbar></Navbar>
+            <HeaderProfile></HeaderProfile>
+           
+            <Footer></Footer>
         </div>
     );
 };
