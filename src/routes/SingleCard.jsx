@@ -1,11 +1,22 @@
 import React from 'react';
 
-const SingleCard = ({singleData}) => {
-    const {id}=singleData
+const SingleCard = ({ data }) => {
+    const { name, picture, experience, recipes, totalLikes } = data
     return (
-        <div>
-            <p>{id}</p>
-        </div>
+        
+            <div className="card w-96 bg-base-100 shadow-xl ">
+                <figure><img src={picture} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{name}</h2>
+                    <p>{experience}</p>
+                    <p>{recipes.length}</p>
+                    <p>{totalLikes}</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary">See Details</button>
+                    </div>
+                </div>
+            </div>
+      
     );
 };
 

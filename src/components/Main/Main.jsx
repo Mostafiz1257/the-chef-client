@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import HeaderProfile from '../pages/HeaderProfile';
 import CardSection from '../pages/CardSection';
+// import SingleCard from '../../routes/SingleCard';
 
 const Main = () => {
     return (
@@ -11,6 +12,7 @@ const Main = () => {
             <Navbar></Navbar>
             <HeaderProfile></HeaderProfile>
             <CardSection></CardSection>
+            {/* <SingleCard></SingleCard> */}
             <Footer></Footer>
         </div>
     );
