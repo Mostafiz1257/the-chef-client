@@ -12,7 +12,6 @@ const Main = () => {
             <Navbar></Navbar>
             <HeaderProfile></HeaderProfile>
             <CardSection></CardSection>
-            {/* <SingleCard></SingleCard> */}
             <Footer></Footer>
         </div>
     );
