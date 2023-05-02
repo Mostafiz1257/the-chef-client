@@ -1,10 +1,10 @@
 import React from 'react';
 
 const SingleCard = ({ data }) => {
-    const { name, picture, experience, recipes, totalLikes } = data
+    const {id, name, picture, experience, recipes, totalLikes } = data
     return (
         
-            <div className="card w-96 bg-base-100 shadow-xl ">
+            <div className="card w-96 bg-base-100 shadow-xl m-5">
                 <figure><img src={picture} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
