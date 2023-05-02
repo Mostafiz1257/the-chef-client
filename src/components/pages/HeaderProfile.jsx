@@ -9,7 +9,7 @@ const HeaderProfile = () => {
                 <p>Now It is easy to enjoy the world best desh just in some times.Take your special dish.</p>
 
             </div>
-            <button class="btn w-64 rounded-full bg-emerald-950 " style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>See All</button>
+            <button class="btnStyle " style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>See All</button>
         </div>
     );
 };
