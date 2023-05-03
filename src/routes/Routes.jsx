@@ -9,21 +9,26 @@ import Login from "../components/LoginLayout/Login";
 import Register from "../components/LoginLayout/Register";
 import PrivateRoute from "./PrivateRoute";
 import LoginLayOut from "../components/pages/LoginLayOut";
+import Blog from "../components/pages/Blog";
+import Error from "../components/pages/Error";
 
 const route = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement:<Error></Error>,
         children: [
             {
                 path: '/navbar',
                 element: <Navbar></Navbar>
             },
+
+
             {
                 path: '/footer',
                 element: <Footer></Footer>
             },
-            
+
         ]
     },
     {
@@ -32,7 +37,7 @@ const route = createBrowserRouter([
         children: [
             {
                 path: '/details',
-                element:<ChefDetails></ChefDetails>
+                element: <ChefDetails></ChefDetails>
 
             },
             {
@@ -41,18 +46,25 @@ const route = createBrowserRouter([
             }
         ]
     },
-            {
-                path:'login',
-                element:<Login></Login>
-            },
-            {
-                path:'register',
-                element:<Register></Register>
-            }
-        
-        
-    
-   
-])
+    {
+        path: 'blog',
+        element: <Blog></Blog>
+    },
+    {
+        path: 'login',
+        element: <Login></Login>
+    },
+    {
+        path: 'register',
+        element: <Register></Register>
+    }
+]
+
+
+
+
+
+
+)
 
 export default route;

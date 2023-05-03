@@ -10,10 +10,12 @@ const CardSection = () => {
     }, [])
     return (
         <div>
-            <div className='text-center	mt-12'>
-                <h6 className=' text-4xl font-bold'>Select Your Chef</h6>
-                <p className='text-semi bold'>Here is your all favorite chef with their special dish.</p>
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-12 justify-items-center	bg-slate-200	'>
+            <div className='text-center'>
+                <div className='pt-12 text-red-950 italic'>
+                <h6 className=' text-4xl font-bold '>Meet With Your Favorite Chef</h6>
+                <p className='font-semibold  mt-4'>Here is your all favorite chef with their special dish.</p>
+                </div>
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-2 mt-12 justify-items-center bg-red-100 '>
                     {
                         allData.map(data => <SingleCard key={data.id} data={data}></SingleCard>)
                     }

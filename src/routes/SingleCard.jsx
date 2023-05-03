@@ -7,7 +7,7 @@ const SingleCard = ({ data }) => {
 
         <div className="card w-96 bg-base-100 shadow-xl m-5">
             <figure><img className='object-cover h-64' src={picture} alt="Shoes" /></figure>
-            <div className="card-body text-left">
+            <div className="card-body text-left text-red-950 cursor-pointer">
                 <h2 className="card-title font-bold"> {name}</h2>
                 <p className='font-bold'>Exprience: {experience}</p>
                 <p className='font-semibold'>Recipe Item: {recipes.length}</p>
@@ -17,7 +17,7 @@ const SingleCard = ({ data }) => {
                 </div>
                 <div className="card-actions justify-end">
                     {/* <button class="btnStyle">See Details</button> */}
-                    <Link to={`/details/${id}`}><button class="btnStyle">View Recipes</button> </Link>
+                    <Link to={`/details/${id}`}><button class="btnStyle hover:bg-red-950">View Recipes</button> </Link>
                 </div>
             </div>
         </div>

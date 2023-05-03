@@ -12,14 +12,14 @@ const DetailsCard = () => {
     const { name, picture, bio, totalLikes, recipes, experience } = data
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl m-12">
+            <div className="card card-side bg-red-100 shadow-xl m-12">
                 <div className="avatar">
                     <div className="w-96 rounded-xl">
                         <img src={picture} />
                     </div>
                 </div>
                 <div className="card-body">
-                    <h2 className="card-title text-4xl font-bold">{name}</h2>
+                    <h2 className="card-title text-4xl font-bold text-red-600">{name}</h2>
                     <p className='font-semibold'>{bio}</p>
                     <p className='font-semibold'>Total Likes: {totalLikes}+</p>
                     <p className='font-semibold'>Recipe Items: {recipes?.length}</p>
@@ -28,7 +28,7 @@ const DetailsCard = () => {
             </div>
 
             <div>
-                <h4 className='text-3xl font-bold text-center underline mb-12'> Recipe </h4>
+                <h4 className='text-3xl font-bold text-center underline mb-12 text-red-600'> Recipe </h4>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-clos-3 mb-12'>
                 <div className="card w-96 bg-base-100 shadow-xl">

@@ -2,7 +2,11 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../provider/AuthProvider';
+
+import Footer from '../Main/Footer';
+import Navbar from '../Main/Navbar';
 const Login = () => {
+ 
   const { signIn, googleSignIn, githubLogIn } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
@@ -49,6 +53,7 @@ const Login = () => {
   }
   return (
     <div className=''>
+       <Navbar></Navbar>
       <div className='flex flex-col justify-center items-center bg-slate-900	 h-screen'>
         <h4 className='text-3xl font-bold text-white'>Please Log In</h4>
         <form onSubmit={handleLogIn}>
@@ -65,6 +70,8 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <Footer></Footer>
+     
     </div>
   );
 };
