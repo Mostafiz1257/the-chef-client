@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../provider/AuthProvider';
@@ -8,6 +8,7 @@ import Navbar from '../Main/Navbar';
 const Login = () => {
  
   const { signIn, googleSignIn, githubLogIn } = useContext(AuthContext)
+  const [error,setError]=useState('')
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
@@ -23,10 +24,12 @@ const Login = () => {
       .then(result => {
         const loggedUSer = result.user;
         console.log(loggedUSer);
+       
         navigate(from, { replace: true })
       })
       .catch(error => {
         console.log(error);
+        setError(error)
       })
   }
   const handleGoggle = () => {
@@ -49,6 +52,7 @@ const Login = () => {
       })
       .catch(error => {
         console.log(error);
+        
       })
   }
   return (
@@ -61,6 +65,9 @@ const Login = () => {
           <br />
           <input type="password" placeholder="Enter password" name='password' className="input input-bordered w-full max-w-xs mt-4" required />
           <br />
+          {
+          error &&  <p className='text-red-400'>Password not Matching.try again..!!!</p>
+         }
           <button class="btn w-64 rounded-full mt-4">Login</button>
           <p className=' text-center text-white mt-4'>No Accounts ? <Link to='/register'><span className='text-green-500 underline'>Register</span></Link> here</p>
           <p className=' text-center text-white mt-4 '>or</p>

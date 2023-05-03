@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const DetailsCard = () => {
     const { id } = useParams();
     const [data, setData] = useState({})
+    const [disabled,setDisable]=useState(false)
     useEffect(() => {
         fetch(`http://localhost:5000/allData/${id}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
     const { name, picture, bio, totalLikes, recipes, experience } = data
+    const notify = () =>{
+        toast("Added to Favorite",
+        setDisable(true)
+        )} ;
+
+
     return (
         <div>
             <div className="card card-side bg-red-100 shadow-xl m-12">
@@ -34,22 +43,25 @@ const DetailsCard = () => {
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[0].name}</h2> */}
-                        {/* <p>{recipes[0]?.name?.ingredients}</p> */}
-                       
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <button onClick={notify} className="btn btn-wide">Add Favorite</button>
+                        <ToastContainer/>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[1]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                       
+                        <button onClick={notify2} className="btn btn-wide">Add Favorite</button>
+                        <ToastContainer/>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[2]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                        
+                        <button  onClick={notify3} className="btn btn-wide">Add Favorite</button>
+                        <ToastContainer/>
                     </div>
                 </div>
             </div>

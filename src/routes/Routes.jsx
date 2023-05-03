@@ -11,19 +11,22 @@ import PrivateRoute from "./PrivateRoute";
 import LoginLayOut from "../components/pages/LoginLayOut";
 import Blog from "../components/pages/Blog";
 import Error from "../components/pages/Error";
+import Branch from "../components/Main/Branch";
 
 const route = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        errorElement:<Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/navbar',
                 element: <Navbar></Navbar>
             },
-
-
+            {
+                path:'branch',
+                element:<Branch></Branch>
+            },
             {
                 path: '/footer',
                 element: <Footer></Footer>
@@ -57,7 +60,8 @@ const route = createBrowserRouter([
     {
         path: 'register',
         element: <Register></Register>
-    }
+    },
+
 ]
 
 

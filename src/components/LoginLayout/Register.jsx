@@ -3,10 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Navbar from '../Main/Navbar';
 import Footer from '../Main/Footer';
-
+import { FaGoogle, FaGithub } from "react-icons/fa";
 const Register = () => {
     const { createUser } = useContext(AuthContext)
-    const [error, setError,profileUpdate] = useState('')
+    const [error, setError,] = useState('')
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -33,13 +33,14 @@ const Register = () => {
                 console.log(error);
             })
     }
+  
     return (
         <div className=''>
             <Navbar></Navbar>
             <div className='flex flex-col justify-center items-center bg-slate-900	 h-screen'>
                 <h4 className='text-3xl font-bold text-white'>Please Register Here</h4>
                 <form onSubmit={handleRegister}>
-                    <input type="text" placeholder="Enter name" name='name' className="input input-bordered w-full max-w-xs mt-4"  required />
+                    <input type="text" placeholder="Enter name" name='name' className="input input-bordered w-full max-w-xs mt-4" required />
                     <br />
                     <input type="text" placeholder="Enter your photo Url" name='photo' className="input input-bordered w-full max-w-xs mt-4" required />
                     <br />
@@ -50,6 +51,7 @@ const Register = () => {
                     <p className='text-red-400'>{error}</p>
                     <button class="btn w-64 rounded-full mt-4">Register</button>
                     <p className=' text-center text-white mt-4'>Already have accounts ? <Link to='/login'><span className='text-green-500 underline'>Login</span></Link> here</p>
+                  
                 </form>
             </div>
             <Footer></Footer>

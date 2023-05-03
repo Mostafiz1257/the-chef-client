@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleCard from '../../routes/SingleCard';
+import Branch from '../Main/Branch';
 
 const CardSection = () => {
     const [allData, setAllData] = useState([])
@@ -20,6 +21,7 @@ const CardSection = () => {
                         allData.map(data => <SingleCard key={data.id} data={data}></SingleCard>)
                     }
                 </div>
+                <Branch></Branch>
             </div>
 
         </div>
