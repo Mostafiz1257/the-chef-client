@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext)
+  const { signIn, googleSignIn ,githubLogIn} = useContext(AuthContext)
 
   const handleLogIn = event => {
     event.preventDefault();
@@ -30,6 +30,16 @@ const Login = () => {
         console.log(error);
       })
   }
+  const handleGithub =()=>{
+    githubLogIn()
+    .then(result=>{
+      const loggedUSer = result.user;
+      console.log(loggedUSer);
+    })
+    .catch(error=>{
+      console.log(error);
+    })
+  }
   return (
     <div className=''>
       <div className='flex flex-col justify-center items-center bg-slate-900	 h-screen'>
@@ -43,8 +53,8 @@ const Login = () => {
           <p className=' text-center text-white mt-4'>No Accounts ? <Link to='/register'><span className='text-green-500 underline'>Register</span></Link> here</p>
           <p className=' text-center text-white mt-4 '>or</p>
           <div className='flex items-center justify-center mt-4 '>
-            <p onClick={handleGoggle}><FaGoogle className='text-white'></FaGoogle></p>
-            <p><FaGithub className='text-white ml-6'></FaGithub></p>
+            <p onClick={handleGoggle}><FaGoogle className='text-white hover:cursor-pointer'></FaGoogle></p>
+            <p onClick={handleGithub}><FaGithub className='text-white ml-6 hover:cursor-pointer'></FaGithub></p>
           </div>
         </form>
       </div>
