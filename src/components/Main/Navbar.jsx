@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-daisyui';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
     return (
@@ -18,7 +19,12 @@ const Navbar = () => {
                 <li className='mr-4'>Blog</li>
                 <li className='mr-4'>Feature</li>
                 <li className='mr-4'>Contract</li>
+                <Link to='/login'> <li> <button className="btn bg-teal-900">Login</button>
+                </li></Link>
+                <li> <button className="btn bg-teal-900">Log Out</button>
+                </li>
             </ul>
+
             <div className="navbar-center hidden lg:flex">
 
             </div>

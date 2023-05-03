@@ -5,6 +5,8 @@ import Navbar from "../components/Main/Navbar";
 import Details from "../components/pages/Details";
 import DetailsCard from "../components/pages/DetailsCard";
 import ChefDetails from "../components/pages/ChefDetails";
+import Login from "../components/LoginLayout/Login";
+import Register from "../components/LoginLayout/Register";
 
 const route = createBrowserRouter([
     {
@@ -19,6 +21,7 @@ const route = createBrowserRouter([
                 path: '/footer',
                 element: <Footer></Footer>
             },
+            
         ]
     },
     {
@@ -35,6 +38,14 @@ const route = createBrowserRouter([
                 element: <DetailsCard></DetailsCard>
             }
         ]
+    },
+    {
+        path:'login',
+        element:<Login></Login>
+    },
+    {
+        path:'register',
+        element:<Register></Register>
     }
 
 ])
