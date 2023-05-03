@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
-  const { signIn, googleSignIn ,githubLogIn} = useContext(AuthContext)
+  const { signIn, googleSignIn, githubLogIn } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
+
 
   const handleLogIn = event => {
     event.preventDefault();
@@ -15,6 +19,7 @@ const Login = () => {
       .then(result => {
         const loggedUSer = result.user;
         console.log(loggedUSer);
+        navigate(from, { replace: true })
       })
       .catch(error => {
         console.log(error);
@@ -25,20 +30,22 @@ const Login = () => {
       .then(result => {
         const loggedUSer = result.user
         console.log(loggedUSer);
+        navigate(from, { replace: true })
       })
       .catch(error => {
         console.log(error);
       })
   }
-  const handleGithub =()=>{
+  const handleGithub = () => {
     githubLogIn()
-    .then(result=>{
-      const loggedUSer = result.user;
-      console.log(loggedUSer);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
+      .then(result => {
+        const loggedUSer = result.user;
+        navigate(from, { replace: true })
+        console.log(loggedUSer);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
   return (
     <div className=''>

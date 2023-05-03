@@ -7,6 +7,8 @@ import DetailsCard from "../components/pages/DetailsCard";
 import ChefDetails from "../components/pages/ChefDetails";
 import Login from "../components/LoginLayout/Login";
 import Register from "../components/LoginLayout/Register";
+import PrivateRoute from "./PrivateRoute";
+import LoginLayOut from "../components/pages/LoginLayOut";
 
 const route = createBrowserRouter([
     {
@@ -35,19 +37,22 @@ const route = createBrowserRouter([
             },
             {
                 path: ':id',
-                element: <DetailsCard></DetailsCard>
+                element: <PrivateRoute><DetailsCard></DetailsCard></PrivateRoute>
             }
         ]
     },
-    {
-        path:'login',
-        element:<Login></Login>
-    },
-    {
-        path:'register',
-        element:<Register></Register>
-    }
-
+            {
+                path:'login',
+                element:<Login></Login>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
+            }
+        
+        
+    
+   
 ])
 
 export default route;
