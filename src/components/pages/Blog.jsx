@@ -1,9 +1,16 @@
 import React from 'react';
 import Navbar from '../Main/Navbar';
 import Footer from '../Main/Footer';
-
+import { FaDownload } from "react-icons/fa";
+import ReactToPdf from "react-to-pdf";
 
 const Blog = () => {
+    const ref = React.createRef();
+    const options = {
+        orientation: 'portrait',
+        unit: 'in',
+        format: [14, 15]
+    };
     return (
         <div>
             <Navbar></Navbar>
@@ -38,6 +45,11 @@ const Blog = () => {
                         Custom hooks can be used to abstract away complex logic, such as API calls, form validation, and state management, making it easier to reuse that logic across multiple components. Custom hooks can also help to improve code organization and readability by separating out complex logic from the components themselves.</p>
                 </p>
             </div>
+            <ReactToPdf targetRef={document.body} filename="blog.pdf" options={options} x={0} y={0.5} scale={0.8} >
+                {({ toPdf }) => (
+                    <button className="btn btn-primary" onClick={toPdf} > <FaDownload></FaDownload> Download blogs pdf</button>
+                )}
+            </ReactToPdf>
             <Footer></Footer>
         </div>
     );

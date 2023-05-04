@@ -6,7 +6,7 @@ import Footer from '../Main/Footer';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser,profileUpdate } = useContext(AuthContext)
     const [error, setError,] = useState('')
 
     const navigate = useNavigate()
@@ -27,6 +27,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUSer = result.user
+                profileUpdate({displayName:name,photoURL:photo})
                 console.log(createdUSer);
                 updateUserData(result.user,name)
                 navigate(from, { replace: true })

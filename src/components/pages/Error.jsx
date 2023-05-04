@@ -9,8 +9,8 @@ const Error = () => {
             <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
                 <FaceFrownIcon className='w-40 h-40 text-yellow-500' />
                 <div className='max-w-md text-center'>
+                    <img src="https://i.ibb.co/1mNRfHB/404.webp" alt="" />
                     
-                    <p className='text-5xl font-bold'>404 </p>
                     <Link to='/' className='btn btn-wide mt-3'>
                         Back to homepage
                     </Link>

@@ -25,7 +25,12 @@ const Navbar = () => {
                 <ul className=' lg:flex md:flex items-center gap-3'>
                     <NavLink to='/' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Home</li></NavLink>
                     <NavLink to='/blog' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Blog</li></NavLink>
-                    <li >{user?.email} </li>
+                   
+                    <li><div className="avatar">
+                        <div className="w-8 rounded cursor-pointer">
+                            <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" title={user ? user.displayName : 'Name is not set' } />
+                        </div>
+                    </div></li>
                     <li >
                         {
                             user ? <button onClick={handleLogOut} className="btn bg-teal-900">Log Out</button>
