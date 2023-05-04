@@ -1,12 +1,15 @@
 import React from 'react';
 import { FaThumbsUp } from "react-icons/fa";
+import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 const SingleCard = ({ data }) => {
     const { id, name, picture, experience, recipes, totalLikes } = data
     return (
 
         <div className="card w-96 bg-base-100 shadow-xl m-5">
-            <figure><img className='object-cover h-64' src={picture} alt="Shoes" /></figure>
+            <LazyLoad>
+            <img className='object-cover h-64' src={picture} alt="Shoes" />
+            </LazyLoad>
             <div className="card-body text-left text-red-950 cursor-pointer">
                 <h2 className="card-title font-bold"> {name}</h2>
                 <p className='font-bold'>Exprience: {experience}</p>

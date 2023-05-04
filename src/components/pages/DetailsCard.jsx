@@ -44,17 +44,17 @@ const DetailsCard = () => {
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[0].name}</h2> */}
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <button disabled='disabled' onClick={notify} className="btn btn-wide">Add Favorite</button>
-                        <ToastContainer/>
+                        <p>The main chef is maiking this type </p>
+                        <button disabled='disable' onClick={notify} className="btn btn-wide">Add Favorite</button>
+                      
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[1]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <button disabled='disabled' onClick={notify} className="btn btn-wide">Add Favorite</button>
-                        <ToastContainer/>
+                        <button  onClick={notify} className="btn btn-wide">Add Favorite</button>
+                       
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
@@ -62,7 +62,7 @@ const DetailsCard = () => {
                         {/* <h2 className="card-title">{recipes[2]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <button  onClick={notify} className="btn btn-wide">Add Favorite</button>
-                        <ToastContainer/>
+                      
                     </div>
                 </div>
             </div>

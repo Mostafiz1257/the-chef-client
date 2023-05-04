@@ -1,14 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useRouteError } from 'react-router-dom';
-
+import { FaceFrownIcon } from '@heroicons/react/24/solid'
 const Error = () => {
-    const [error,state]=useRouteError();
+    // const [error, status] = useRouteError();
     return (
-        <div>
-            {/* <h2><span>Error page is aschen bai</span>{state || 404}</h2>
-            <p>the real news is: {error.message}</p> */}
-            <p>4o4 is running</p>
-        </div>
+        <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
+            <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
+                <FaceFrownIcon className='w-40 h-40 text-yellow-500' />
+                <div className='max-w-md text-center'>
+                    
+                    <p className='text-5xl font-bold'>404 </p>
+                    <Link to='/' className='btn btn-wide mt-3'>
+                        Back to homepage
+                    </Link>
+                </div>
+            </div>
+        </section>
     );
 };
 

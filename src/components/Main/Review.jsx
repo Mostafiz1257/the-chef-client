@@ -5,9 +5,9 @@ const Review = () => {
         <div className='mt-12 mb-12'>
             <div className='pt-12 text-red-950 italic  mb-12'>
                 <h6 className=' text-4xl font-bold underline'>Our International News Report</h6>
-                <p className='font-semibold  mt-4'>Here is your all favorite chef with their special dish.</p>
+                <p className='font-semibold  mt-4'>Some International News is Published our News:</p>
             </div >
-            <div className='grid lg:grid-cols-3 md:grid-cols-3 bg-red-100 p-12 gap-3'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-1 bg-red-100 p-12 gap-3'>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
                     <figure><img src="https://i.ibb.co/RBZGGh8/aa1.png" alt="Shoes" /></figure>
                     <div className="card-body">

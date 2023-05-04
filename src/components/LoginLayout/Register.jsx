@@ -4,6 +4,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 import Navbar from '../Main/Navbar';
 import Footer from '../Main/Footer';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { updateProfile } from 'firebase/auth';
 const Register = () => {
     const { createUser } = useContext(AuthContext)
     const [error, setError,] = useState('')
@@ -27,13 +28,25 @@ const Register = () => {
             .then(result => {
                 const createdUSer = result.user
                 console.log(createdUSer);
+                updateUserData(result.user,name)
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
             })
     }
-  
+    const updateUserData =(name,user)=>{
+        updateProfile(user,{
+            displayName: name
+           
+        })
+        .then(result=>{
+            console.log('user name updated');
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
     return (
         <div className=''>
             <Navbar></Navbar>
