@@ -8,7 +8,8 @@ const DetailsCard = () => {
     const [data, setData] = useState({})
     const [disabled,setDisable]=useState(false)
     useEffect(() => {
-        fetch(`http://localhost:5000/allData/${id}`)
+        fetch(`https://the-chef-server-opal.vercel.app/allData/${id}`)
+        // fetch(`http://localhost:5000/allData/${id}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
@@ -44,7 +45,7 @@ const DetailsCard = () => {
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[0].name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <button onClick={notify} className="btn btn-wide">Add Favorite</button>
+                        <button disabled='disabled' onClick={notify} className="btn btn-wide">Add Favorite</button>
                         <ToastContainer/>
                     </div>
                 </div>
@@ -52,7 +53,7 @@ const DetailsCard = () => {
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[1]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <button onClick={notify2} className="btn btn-wide">Add Favorite</button>
+                        <button disabled='disabled' onClick={notify} className="btn btn-wide">Add Favorite</button>
                         <ToastContainer/>
                     </div>
                 </div>
@@ -60,7 +61,7 @@ const DetailsCard = () => {
                     <div className="card-body">
                         {/* <h2 className="card-title">{recipes[2]?.name}</h2> */}
                         <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <button  onClick={notify3} className="btn btn-wide">Add Favorite</button>
+                        <button  onClick={notify} className="btn btn-wide">Add Favorite</button>
                         <ToastContainer/>
                     </div>
                 </div>

@@ -5,7 +5,8 @@ import Branch from '../Main/Branch';
 const CardSection = () => {
     const [allData, setAllData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/allData')
+        fetch('https://the-chef-server-opal.vercel.app/allData')
+        // fetch('http://localhost:5000/allData')
             .then(res => res.json())
             .then(data => setAllData(data))
     }, [])
