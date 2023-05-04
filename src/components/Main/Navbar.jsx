@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 
@@ -23,8 +23,8 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className=' lg:flex md:flex items-center gap-3'>
-                    <Link to='/' className={({isActive})=>isActive ? 'active' : 'default'}><li >Home</li></Link>
-                 <Link to='/blog' className={({isActive})=>isActive ? 'active' : 'default'}><li >Blog</li></Link>
+                    <NavLink to='/' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Home</li></NavLink>
+                    <NavLink to='/blog' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Blog</li></NavLink>
                     <li >{user?.email} </li>
                     <li >
                         {

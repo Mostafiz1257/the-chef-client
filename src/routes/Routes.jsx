@@ -19,13 +19,17 @@ const route = createBrowserRouter([
         element: <Main></Main>,
         errorElement: <Error></Error>,
         children: [
+            // {
+            //     path: '/',
+            //     element: <Main></Main>
+            // },
             {
                 path: '/navbar',
                 element: <Navbar></Navbar>
             },
             {
-                path:'branch',
-                element:<Branch></Branch>
+                path: 'branch',
+                element: <Branch></Branch>
             },
             {
                 path: '/footer',
