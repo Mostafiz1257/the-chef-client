@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const DetailsCard = () => {
     const { id } = useParams();
@@ -9,18 +9,17 @@ const DetailsCard = () => {
     const [disabled, setDisable] = useState(false)
     useEffect(() => {
         fetch(`https://the-chef-server-opal.vercel.app/allData/${id}`)
-            // fetch(`http://localhost:5000/allData/${id}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
     const { name, picture, bio, totalLikes, recipes, experience } = data
-    const notify = () => {
-        toast("Added to Favorite",
-            setDisable(true)
-        )
-    };
 
-    console.log(recipes);
+    const handleClick = event => {
+        event.currentTarget.disabled = true;
+        toast.success('add to favorite')
+        console.log('button clicked');
+      };
+
     return (
         <div>
             <div className="card card-side bg-red-100 shadow-xl m-12">
@@ -34,10 +33,9 @@ const DetailsCard = () => {
                     <p className='font-semibold'>{bio}</p>
                     <p className='font-semibold'>Total Likes: {totalLikes}+</p>
                     <p className='font-semibold'>Recipe Items: {recipes?.length}</p>
-                    <p className='font-semibold'>Exprience: {experience}</p>
+                    <p className='font-semibold'>Experience: {experience}</p>
                 </div>
             </div>
-
             <div>
                 <h4 className='text-3xl font-bold text-center underline mb-12 text-red-600'> Recipe </h4>
             </div>
@@ -51,7 +49,7 @@ const DetailsCard = () => {
                                 </p>
                                 <p><span className='font-bold'>Method</span> {recipe?.method}</p>
                                 <p>Ratings: {recipe?.ratings}</p>
-                                <button onClick={notify} className="btn btn-wide">Add Favorite</button>
+                                <button  onClick={handleClick}   className="btn btn-wide">Add Favorite</button>
 
                             </div>
                         </div>
