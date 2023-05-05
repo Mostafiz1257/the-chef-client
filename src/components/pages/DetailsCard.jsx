@@ -20,7 +20,7 @@ const DetailsCard = () => {
         )
     };
 
-
+    console.log(recipes);
     return (
         <div>
             <div className="card card-side bg-red-100 shadow-xl m-12">
@@ -41,58 +41,21 @@ const DetailsCard = () => {
             <div>
                 <h4 className='text-3xl font-bold text-center underline mb-12 text-red-600'> Recipe </h4>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-clos-3 mb-12'>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <div className="card-body">
-                        <p className='text-2xl'>Spaghetti Bolognese</p>
-                        <p><span className='underline font-bold'>Item:</span><br />
-                            spaghetti <br />
-                            ground beef <br />
-                            onion <br />
-                            garlic <br />
-                        </p>
-                        <p><span className='underline font-bold'>Method:</span> Cook the spaghetti according to the package instructions.",
-                            "In a large pan, cook the ground beef over medium-high heat until browned.",
-                            "Add the onion and garlic to the pan and cook until softened.",
-                            "Stir in the canned tomatoes, tomato paste, red wine, bay leaf, salt, and pepper. </p>
-                            <p>Ratings : 4.8</p>
-                        <button onClick={notify} className="btn btn-wide">Add Favorite</button>
+            <div>
+                <div className="grid lg:grid-cols-3 md:grid-clos-3 mb-12">
+                    {recipes?.map((recipe) => (
+                        <div className='card w-96 bg-base-100 shadow-xl'>
+                            <div className="card-body">
+                                <p className='text-2xl underline'> {recipe?.name}</p>
+                                <p><span className=' font-bold'> {recipe?.ingredients}</span><br />
+                                </p>
+                                <p><span className='font-bold'>Method</span> {recipe?.method}</p>
+                                <p>Ratings: {recipe?.ratings}</p>
+                                <button onClick={notify} className="btn btn-wide">Add Favorite</button>
 
-                    </div>
-                </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <div className="card-body">
-                    <p className='text-2xl'>Nigella Lawson</p>
-                        <p><span className='underline font-bold'>Item:</span><br />
-                            spaghetti <br />
-                           Egg <br />
-                            onion <br />
-                           
-                        </p>
-                        <p><span className='underline font-bold'>Method:</span> Cook the cook the ground beef over medium-high heat until browned.",
-                            "Add the onion and garlic to the pan and cook until softened.",
-                            "Stir in the canned tomatoes, tomato paste, red wine, bay leaf, salt, and pepper. </p>
-                            <p>Ratings: 5</p>
-                        <button onClick={notify} className="btn btn-wide">Add Favorite</button>
-
-                    </div>
-                </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <div className="card-body">
-                    <p className='text-2xl'>Chocolate Chip Cookies</p>
-                        <p><span className='underline font-bold'>Item:</span><br />
-                        garlic <br />
-                            ground beef <br />
-                           MAsala<br />
-                            garlic <br />
-                        </p>
-                        <p><span className='underline font-bold'>Method:</span> Cook the 
-                            "Add the onion and garlic to the pan and cook until softened.",
-                            "Stir in the canned tomatoes, tomato paste, red wine, bay leaf, salt, and pepper. </p>
-                            <p>Ratings : 4.5</p>
-                        <button onClick={notify} className="btn btn-wide">Add Favorite</button>
-
-                    </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 

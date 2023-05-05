@@ -25,19 +25,31 @@ const Navbar = () => {
                 <ul className=' lg:flex md:flex items-center gap-3'>
                     <NavLink to='/' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Home</li></NavLink>
                     <NavLink to='/blog' className={({ isActive }) => isActive ? 'active' : 'default'}><li >Blog</li></NavLink>
-                   
-                    <li><div className="avatar">
+                    {/* <li><div className="avatar">
                         <div className="w-8 rounded cursor-pointer">
-                            <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" title={user ? user.displayName : 'Name is not set' } />
+                            <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" title={user ? user.displayName : 'profile is not set'} />
                         </div>
-                    </div></li>
+                    </div></li> */}
                     <li >
                         {
-                            user ? <button onClick={handleLogOut} className="btn bg-teal-900">Log Out</button>
-                                :
-                                <Link to='/login'><button className="btn bg-teal-900">Login</button>
-                                </Link>
+                            user ?
+                           <div className='flex lg:items-center lg:gap-2 md:gap-2'>
+                              
+                              <li><div className="avatar">
+                                        <div className="w-8 rounded cursor-pointer">
+                                            <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" title={user ? user.displayName : 'profile is not set'} />
+                                        </div>
+                                    </div></li>
+                                    <button onClick={handleLogOut} className="btn bg-teal-900">Log Out</button>
+                           </div>
 
+                                :
+
+                                <div>
+                                    <Link to='/login'><button className="btn bg-teal-900">Login</button>
+                                    </Link>
+                                   
+                                </div>
                         }
                     </li>
                 </ul>

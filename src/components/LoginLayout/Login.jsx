@@ -57,8 +57,8 @@ const Login = () => {
   return (
     <div className=''>
        <Navbar></Navbar>
-      <div className='flex flex-col justify-center items-center bg-slate-900	 h-screen'>
-        <h4 className='text-3xl font-bold text-white'>Please Log In</h4>
+      <div className='flex flex-col justify-center items-center 	 h-screen'>
+        <h4 className='text-3xl font-bold '>Please Log In</h4>
         <form onSubmit={handleLogIn}>
           <input type="email" placeholder="Enter Email" name='email' className="input input-bordered w-full max-w-xs mt-4" required />
           <br />
@@ -68,11 +68,11 @@ const Login = () => {
           error &&  <p className='text-red-400'>Password not Matching.try again..!!!</p>
          }
           <button class="btn w-64 rounded-full mt-4">Login</button>
-          <p className=' text-center text-white mt-4'>No Accounts ? <Link to='/register'><span className='text-green-500 underline'>Register</span></Link> here</p>
-          <p className=' text-center text-white mt-4 '>or</p>
+          <p className=' text-center  mt-4'>No Accounts ? <Link to='/register'><span className='text-green-500 underline'>Register</span></Link> here</p>
+          <p className=' text-center  mt-4 '>or</p>
           <div className='flex items-center justify-center mt-4 '>
-            <p onClick={handleGoggle}><FaGoogle className='text-white hover:cursor-pointer'></FaGoogle></p>
-            <p onClick={handleGithub}><FaGithub className='text-white ml-6 hover:cursor-pointer'></FaGithub></p>
+            <p onClick={handleGoggle}><FaGoogle className='text-3xl hover:cursor-pointer'></FaGoogle></p>
+            <p onClick={handleGithub}><FaGithub className='text-3xl ml-6 hover:cursor-pointer'></FaGithub></p>
           </div>
         </form>
       </div>
