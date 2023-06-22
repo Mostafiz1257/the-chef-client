@@ -6,7 +6,7 @@ import Footer from '../Main/Footer';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 const Register = () => {
-    const { createUser,profileUpdate } = useContext(AuthContext)
+    const { createUser, profileUpdate } = useContext(AuthContext)
     const [error, setError,] = useState('')
 
     const navigate = useNavigate()
@@ -27,26 +27,26 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUSer = result.user
-                profileUpdate({displayName:name,photoURL:photo})
+                profileUpdate({ displayName: name, photoURL: photo })
                 console.log(createdUSer);
-                updateUserData(result.user,name)
+                updateUserData(result.user, name)
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
             })
     }
-    const updateUserData =(name,user)=>{
-        updateProfile(user,{
+    const updateUserData = (name, user) => {
+        updateProfile(user, {
             displayName: name
-           
+
         })
-        .then(result=>{
-            console.log('user name updated');
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            .then(result => {
+                console.log('user name updated');
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className=''>
@@ -65,7 +65,7 @@ const Register = () => {
                     <p className='text-red-400'>{error}</p>
                     <button class="btn w-64 rounded-full mt-4">Register</button>
                     <p className=' text-center  mt-4'>Already have accounts ? <Link to='/login'><span className='text-green-500 underline'>Login</span></Link> here</p>
-                  
+
                 </form>
             </div>
             <Footer></Footer>
